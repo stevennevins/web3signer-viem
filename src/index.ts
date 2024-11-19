@@ -1,6 +1,5 @@
 import { toAccount } from 'viem/accounts';
 import axios from 'axios';
-import {serializeTransaction} from "viem"
 import type { TransactionSerializable } from 'viem';
 import dotenv from 'dotenv';
 

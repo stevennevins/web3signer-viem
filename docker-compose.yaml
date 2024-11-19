@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   web3signer:
     image: consensys/web3signer:latest
@@ -9,3 +7,4 @@ services:
     ports:
       - "8545:8545"
       - "9000:9000"
+      - "9001:9001"

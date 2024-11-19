@@ -1,5 +1,5 @@
 import { expect, describe, it, beforeAll } from 'vitest';
-import { createWalletClient, http, type WalletClient, verifyMessage, verifyTypedData, parseEther, serializeTransaction, type TransactionSerializable, parseGwei, formatTransaction } from 'viem';
+import { createWalletClient, http, type WalletClient, verifyMessage, verifyTypedData, parseEther } from 'viem';
 import { anvil } from 'viem/chains';
 import { web3SignerAccount } from '../src';
 
@@ -72,10 +72,12 @@ describe('Web3Signer Integration', () => {
       account: web3SignerAccount,
       to: '0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB',
       value: parseEther("0.01"),
-      chain: null
+      chain: anvil
     });
 
     const hash = await client.signTransaction(request);
+
+    expect(typeof hash).toBe('string');
 
   });
 });

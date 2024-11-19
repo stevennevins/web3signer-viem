@@ -1,11 +1,11 @@
 http-listen-host: "0.0.0.0"
-http-listen-port: 8545
+http-listen-port: 9000
 http-host-allowlist: "*"
 swagger-ui-enabled: true
 
 metrics-enabled: true
 metrics-host: "0.0.0.0"
-metrics-port: 9000
+metrics-port: 9001
 metrics-host-allowlist: "*"
 
 
