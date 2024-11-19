@@ -2,10 +2,10 @@ version: "3.9"
 
 services:
   web3signer:
-    image: consensys/web3signer:develop
-    command: --config-file=/var/config/config.yaml eth2
+    image: consensys/web3signer:latest
+    command: --config-file=/var/config/config.yaml eth1 --chain-id 31337
     volumes:
       - ./config:/var/config
     ports:
+      - "8545:8545"
       - "9000:9000"
-      - "9001:9001"
