@@ -1,13 +1,10 @@
-import { createWalletClient, http } from 'viem';
 import { toAccount } from 'viem/accounts';
-import { mainnet } from 'viem/chains';
 import axios from 'axios';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Define the address managed by Web3Signer
-const address = '0xYourAddress';
+const address = process.env.SIGNER_ADDRESS as `0x${string}`;
 const signerUrl = process.env.WEB3_SIGNER_URL;
 
 if (!signerUrl) {
@@ -15,7 +12,7 @@ if (!signerUrl) {
 }
 
 // Create a custom account using toAccount
-const web3SignerAccount = toAccount({
+export const web3SignerAccount = toAccount({
   address,
   // Sign a message using Web3Signer
   async signMessage({ message }) {
@@ -49,10 +46,4 @@ const web3SignerAccount = toAccount({
     });
     return response.data.result;
   }
-});
-
-const client = createWalletClient({
-  chain: mainnet,
-  transport: http(),
-  account: web3SignerAccount
 });
