@@ -1,2 +1,3 @@
-privateKey: '0x3842bb5488f6a9189ae0716dd0815456ae8fceb293675cdbc5477277b4a5ac1b'
+privateKey: '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80'
+keyType: "SECP256K1"
 type: file-raw
